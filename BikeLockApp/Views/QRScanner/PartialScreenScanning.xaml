@@ -1,5 +1,23 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BikeLockApp.Views.QRScanner.PartialScreenScanning">
-    <ContentPage.Content>
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        x:Class="BikeLockApp.Views.QRScanner.PartialScreenScanning"
+                        xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+                        Title="Partial screen">
+    <Grid BackgroundColor="#272525">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Frame Grid.Row="0" BackgroundColor="#272525" CornerRadius="0">
+             <Label Text="Scan the QR code" FontAttributes="Bold" FontFamily="Arial" FontSize="Subtitle" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        </Frame>
+        <zxing:ZXingScannerView Grid.Row="1" x:Name="_scanView" IsScanning="true"
+                                WidthRequest="400" HeightRequest="400" />
+        <Frame Grid.Row="2" BackgroundColor="#272525" Padding="30" CornerRadius="1" BorderColor="#272525">
+        <Button Grid.Row="2" BackgroundColor="Black" Text="Go back" TextColor="White" Clicked="Button_Clicked" CornerRadius="50"/>
+        </Frame>
+    </Grid>
 </ContentPage>

@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BikeLockApp.Views.PairView">
     <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Padding="0,40,0,0" WidthRequest="250" >
+            <Label Text="Public Bike Station" FontAttributes="Bold" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Label Text="Setup the connection" FontAttributes="None" HorizontalTextAlignment="Center" />
+            <Label Text="Pair your device with a locker" FontAttributes="None" HorizontalTextAlignment="Center" Padding="0,100,0,0"/>
+            <Entry Placeholder="Enter the ID of the locker" Text="{Binding LockID}"></Entry>
+            <Button Text="Scan with QR-code" BackgroundColor="Black" TextColor="White" Command="{Binding OpenQRCMD}"></Button>
+            <Button Text="Confirm" BackgroundColor="Black" TextColor="White" Margin="0,80,0,0" Command="{Binding ConfirmCMD}"></Button>
+            <Label Text="The lock will try to connect to you. Please stay close to the lock, and wait a few seconds. If nothing happens try again" HorizontalTextAlignment="Center" FontSize="Caption"></Label>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

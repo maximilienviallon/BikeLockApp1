@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BikeLockApp.Views.HomeView">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:bindings="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings"
+             x:Class="BikeLockApp.Views.HomeView">
     <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <ContentView Content="{Binding Map}"/>
+            <!--<maps:Map WidthRequest="420" HeightRequest="300" x:Name="MyMap" IsShowingUser="False" MapType="Hybrid" >
+                <maps:Map.Behaviors>
+                    <bindings:UpdateRegionBehavior Region="{Binding Region}" Animated="{Binding Animated}"/>
+                </maps:Map.Behaviors>
+            </maps:Map>-->
+            <Button Text="{Binding LockSwitchAction}" BackgroundColor="Black" TextColor="White" HeightRequest="100" Command="{Binding LockSwitchCMD}" Margin="0,40,0,0"></Button>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

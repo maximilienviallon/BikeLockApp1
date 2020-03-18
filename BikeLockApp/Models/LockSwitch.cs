@@ -3,8 +3,10 @@ namespace BikeLockApp.Models
 {
     public class LockSwitch
     {
-        public LockSwitch()
-        {
-        }
+        public string Setting { get; set; }
+
+        public string Email { get; set; }
+
+        public string AttachedLockID { get; set; }
     }
 }

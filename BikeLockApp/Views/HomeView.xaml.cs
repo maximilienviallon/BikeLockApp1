@@ -10,6 +10,7 @@ namespace BikeLockApp.Views
         public HomeView()
         {
             InitializeComponent();
+           
         }
     }
 }
